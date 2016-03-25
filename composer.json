@@ -1,0 +1,42 @@
+{
+	"name": "sanatorium/maintenance",
+	"type": "platform-extension",
+	"description": "Maintenance mode enabler",
+	"authors": [
+		{
+			"name": "Sanatorium",
+			"email": "info@sanatoriu.ninja"
+		},
+        {
+            "name": "rozklad",
+            "email": "jan.rozklad@gmail.com",
+            "homepage": "http://rozklad.me"
+        },
+        {
+        	"name": "mattluk",
+        	"email": "matejlukas12@gmail.com"
+        }
+	],
+	"repositories": [
+		{
+			"type": "composer",
+			"url": "http://packages.cartalyst.com"
+		}
+	],
+	"require": {
+		"php": ">=5.4.0",
+		"cartalyst/composer-installers": "1.2.*",
+		"platform/foundation": "3.0.*"
+	},
+	"autoload": {
+		"classmap": [
+			"database/migrations",
+			"database/seeds"
+		],
+		"psr-4": {
+			"Sanatorium\\Codemirror\\": "src/"
+		}
+	},
+	"minimum-stability": "dev",
+	"prefer-stable": true
+}
