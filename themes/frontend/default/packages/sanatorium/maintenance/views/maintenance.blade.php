@@ -1,4 +1,6 @@
 <!doctype html>
+<html>
+<head>
 <title>{{ trans('sanatorium/maintenance::common.title') }}</title>
 <style>
   body { text-align: center; padding: 150px; }
@@ -9,12 +11,22 @@
   a:hover { color: #333; text-decoration: none; }
 </style>
 
-<article>
-    <h1>{{ trans('sanatorium/maintenance::common.title') }}</h1>
-    <div>
-        <p>
-          {!! trans('sanatorium/maintenance::common.message', ['email_address' => config('mail.from.address')]) !!}
-        </p>
-        <p>&mdash; {{ config('platform.app.title') }}</p>
-    </div>
-</article>
+    <body>
+
+        <article>
+            <h1>{{ trans('sanatorium/maintenance::common.title') }}</h1>
+            <div>
+                <p>
+                  {!! trans('sanatorium/maintenance::common.message', ['email_address' => config('mail.from.address')]) !!}
+                </p>
+                <p>&mdash; {{ config('platform.app.title') }}</p>
+            </div>
+            <p>
+                <small>
+                    {{ Theme::getActive('frontend') }}
+                </small>
+            </p>
+        </article>
+
+    </body>
+</html>

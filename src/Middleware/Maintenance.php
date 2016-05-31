@@ -3,6 +3,7 @@
 use Closure;
 use Session;
 use Sentinel;
+use Theme;
 
 class Maintenance
 {
@@ -16,6 +17,8 @@ class Maintenance
      */
     public function handle($request, Closure $next)
     {
+        Theme::setActive( config('platform-themes.active.frontend') );
+
         if ( config('sanatorium-maintenance.mode') == 1 ) {
 
             $allowed_raw = explode(',', config('sanatorium-maintenance.allowed'));
